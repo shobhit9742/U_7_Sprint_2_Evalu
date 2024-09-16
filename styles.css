@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center form vertically */
+}
+
+header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center logo horizontally */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.form-container {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.google-signup {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.google-signup img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.create-account {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.signin-link {
+  color: #aaa;
+  margin-top: 20px;
+}
+
+.signin-link a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.signin-link a:hover {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablet view (768px and below) */
+@media (max-width: 768px) {
+  .form-container {
+    width: 80%; /* Make the form take up 80% of the width */
+    padding: 20px;
+  }
+
+  header {
+    font-size: 1.5rem; /* Adjust logo font size for tablet */
+  }
+}
+
+/* Mobile view (480px and below) */
+@media (max-width: 480px) {
+  .form-container {
+    width: 90%; /* Make the form take up 90% of the width on mobile */
+    padding: 15px;
+  }
+
+  header {
+    font-size: 1.2rem; /* Adjust logo font size for mobile */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Reduce heading font size on mobile */
+  }
+
+  .google-signup,
+  .create-account {
+    font-size: 0.9rem; /* Adjust font size for buttons */
+    padding: 8px; /* Reduce padding for smaller buttons */
+  }
+}

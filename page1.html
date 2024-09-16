@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onebox</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #181818; /* Dark mode */
+        color: #fff; /* Dark mode */
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .container {
+        width: 1440px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-left: 25px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+        /* color: #fff; */
+      }
+
+      .sidebar {
+        width: 56px;
+        height: 100vh;
+        background-color: #242424;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: background-color 0.3s;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+      }
+
+      .sidebar li {
+        margin-bottom: 10px;
+      }
+
+      .sidebar a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #fff;
+        transition: background-color 0.3s;
+      }
+
+      .sidebar a:hover {
+        background-color: #333; /* Dark mode */
+      }
+
+      .main-content {
+        width: calc(100% - 80px);
+        margin-left: 80px;
+        padding: 20px;
+        margin-top: 100px;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .content h1 {
+        margin-top: 0;
+        font-size: 32px;
+        font-weight: bold;
+        /* color: #fff; */
+      }
+
+      .content p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .content button {
+        background-color: #007bff; /* Blue */
+        /* color: #fff; */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .content button:hover {
+        background-color: #0069d9; /* Darker blue */
+      }
+
+      .theme-toggle {
+        position: fixed;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      .theme-toggle i {
+        font-size: 20px;
+        color: #fff;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .container {
+          width: 95%;
+        }
+
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: static;
+        }
+
+        .main-content {
+          margin-left: 0;
+        }
+      }
+
+      /* Light mode styles */
+      .light-mode {
+        background-color: #f8f9fa; /* Light mode */
+        color: #333; /* Light mode */
+      }
+
+      .light-mode .sidebar {
+        background-color: #f0f0f0; /* Light mode */
+      }
+
+      .light-mode .sidebar a {
+        color: #333; /* Light mode */
+      }
+
+      .light-mode .sidebar a:hover {
+        background-color: #ddd; /* Light mode */
+      }
+
+      .light-mode .content button {
+        background-color: #007bff; /* Blue */
+      }
+
+      .light-mode .content button:hover {
+        background-color: #0069d9; /* Darker blue */
+      }
+
+      .light-mode .theme-toggle i {
+        color: #333; /* Light mode */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">Onebox</div>
+
+        <div>Tim's Workspace</div>
+        <div class="theme-toggle">
+          <i class="fas fa-sun"></i>
+        </div>
+      </div>
+      <div class="sidebar">
+        <ul>
+          <li>
+            <a href="#"><i class="fas fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-user"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-paper-plane"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-list"></i></a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fas fa-inbox"></i> <span class="badge">12+</span></a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-chart-bar"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <div class="content">
+          <div>
+            <img src="./images/No Message illustration.png" alt="" />
+            <h1>It's the beginning of a legendary sales pipeline</h1>
+            <p>When you have inbound E-mails you'll see them here</p>
+            <!-- <button>Get Started</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/8c5e0504e5.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const themeToggle = document.querySelector(".theme-toggle");
+      const body = document.body;
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+        if (body.classList.contains("light-mode")) {
+          themeToggle.querySelector("i").classList.remove("fa-sun");
+          themeToggle.querySelector("i").classList.add("fa-moon");
+        } else {
+          themeToggle.querySelector("i").classList.remove("fa-moon");
+          themeToggle.querySelector("i").classList.add("fa-sun");
+        }
+      });
+    </script>
+  </body>
+</html>
